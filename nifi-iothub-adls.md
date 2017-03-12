@@ -1,3 +1,5 @@
+![nifi0](/images/nifi0.png)
+
 #Ingesting Data from Azure IoT Hub to Azure Data Lake Store with Apache NiFi
 
 With Apache NiFi you can automate the data flow between different systems. The following blog post demonstrates how easily Apache NiFi can be used to integrate Azure Platform Services in existing NiFi solutions. We will setup a dataflow that ingests data from Azure IoT Hub and writes the data to Azure Data Lake Store.
