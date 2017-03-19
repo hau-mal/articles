@@ -55,8 +55,8 @@ Copy jars needed for Azure Data Lake Store
 
 sudo mkdir /usr/lib/hdinsight-datalake
 
-eg:
-sudo scp sshuser@<mycluster>-ssh.azurehdinsight.net:/usr/lib/hdinsight-datalake/adls2-oauth2-token-provider-1.0.jar  /usr/lib/hdinsight-datalake
+Copy needed jars
+eg: sudo scp sshuser@<mycluster>-ssh.azurehdinsight.net:/usr/lib/hdinsight-datalake/adls2-oauth2-token-provider-1.0.jar  /usr/lib/hdinsight-datalake
 
 | Path | File |
 | -----|------|
@@ -66,6 +66,8 @@ sudo scp sshuser@<mycluster>-ssh.azurehdinsight.net:/usr/lib/hdinsight-datalake/
 | /usr/hdp/current/hadoop-hdfs-client/lib/ | okhttp-2.4.0.jar |
 | /usr/hdp/current/hadoop-hdfs-client/lib/ | okio-1.4.0.jar |
 
+
+Prepared archive on my github:
 
 
 ```
