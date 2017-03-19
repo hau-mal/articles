@@ -1,14 +1,16 @@
 ![nifi0](/images/nifi0.png)
 
-#Installing Apache NiFi on an Azure VM
+# Installing Apache NiFi on an Azure VM
 
 With Apache NiFi you can automate the data flow between different systems. The following blog post demonstrates how easily Apache NiFi can be used to integrate Azure Platform Services in existing NiFi solutions. We will setup a dataflow that ingests data from Azure IoT Hub and writes the data to Azure Data Lake Store.
-##Prerequisites
+
+## Prerequisites
 Before you begin you must have the following:
-* Install Java
+* an Azure Ubuntu VM running
+* Java 
 
+## Install Java
 
-##Installing Java
 https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04
 
 Java Install:
@@ -21,10 +23,7 @@ sudo apt-get install oracle-java8-installer
 
 Set Java Home in
 /etc/environment
-
 source /etc/environment
-
-
 
 ## Install NiFi
 You are now ready to install Appache NiFi.
@@ -46,10 +45,6 @@ sudo /usr/bin/nifi/nifi-1.1.2/bin/nifi.sh start
 echo "nifi installation done"
 
 ```
-
-
-
-
 
 Copy jars needed for Azure Data Lake Store
 
@@ -79,11 +74,7 @@ sudo tar -xzf adl.tar.gz?raw=true
 sudo rm adl.tar.gz?raw=true
 ```
 
+For production use you should consider ...
 
-
-For production use you should consider 
-
-
-
-##Conclusion
+## Conclusion
 In this post, we have seen how easy it is to 
