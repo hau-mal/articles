@@ -2,7 +2,7 @@
 
 # Installing Apache NiFi on an Azure VM
 
-With Apache NiFi you can automate the data flow between different systems. The following blog post demonstrates how easily Apache NiFi can be used to integrate Azure Platform Services in existing NiFi solutions. We will setup a dataflow that ingests data from Azure IoT Hub and writes the data to Azure Data Lake Store.
+With Apache NiFi you can automate the data flow between different systems. The following blog post demonstrates how easily Apache NiFi can be installed on an Azure VM.
 
 ## Prerequisites
 Before you begin you must have the following:
