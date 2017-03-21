@@ -7,23 +7,7 @@ With Apache NiFi you can automate the data flow between different systems. The f
 ## Prerequisites
 Before you begin you must have the following:
 * an Azure Ubuntu VM running
-* Java 
-
-## Install Java
-
-https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04
-
-Java Install:
-sudo apt-get update
-sudo apt-get install default-jre
-sudo apt-get install default-jdk
-sudo add-apt-repository ppa:webupd8team/java
-sudo apt-get update
-sudo apt-get install oracle-java8-installer
-
-Set Java Home in
-/etc/environment
-source /etc/environment
+* Installed Java (if not installed see for example [Java installation] (https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04)
 
 ## Install NiFi
 You are now ready to install Appache NiFi.
@@ -46,12 +30,15 @@ echo "nifi installation done"
 
 ```
 
-Copy jars needed for Azure Data Lake Store
+To access Azure Data Lake Store from Apache NiFi some additional jars are needed. You have to create a directory to store them:
+
+```
 
 sudo mkdir /usr/lib/hdinsight-datalake
 
-Copy needed jars
-eg: sudo scp sshuser@<mycluster>-ssh.azurehdinsight.net:/usr/lib/hdinsight-datalake/adls2-oauth2-token-provider-1.0.jar  /usr/lib/hdinsight-datalake
+```
+
+and copy needed jars from HDinsight. The following files are needed:
 
 | Path | File |
 | -----|------|
@@ -61,8 +48,15 @@ eg: sudo scp sshuser@<mycluster>-ssh.azurehdinsight.net:/usr/lib/hdinsight-datal
 | /usr/hdp/current/hadoop-hdfs-client/lib/ | okhttp-2.4.0.jar |
 | /usr/hdp/current/hadoop-hdfs-client/lib/ | okio-1.4.0.jar |
 
+Copy them e. g. like:
 
-Prepared archive on my github:
+```
+
+sudo scp sshuser@<mycluster>-ssh.azurehdinsight.net:/usr/lib/hdinsight-datalake/adls2-oauth2-token-provider-1.0.jar  /usr/lib/hdinsight-datalake
+
+```
+
+On my github there is a prepared archive with the above versions (HDI 3.5):
 
 
 ```
@@ -74,7 +68,4 @@ sudo tar -xzf adl.tar.gz?raw=true
 sudo rm adl.tar.gz?raw=true
 ```
 
-For production use you should consider ...
 
-## Conclusion
-In this post, we have seen how easy it is to 
