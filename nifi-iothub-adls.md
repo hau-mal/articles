@@ -1,14 +1,14 @@
 ![nifi0](/images/nifi0.png)
 
-#Ingesting Data from Azure IoT Hub to Azure Data Lake Store with Apache NiFi
+# Ingesting Data from Azure IoT Hub to Azure Data Lake Store with Apache NiFi
 
 With Apache NiFi you can automate the data flow between different systems. The following blog post demonstrates how easily Apache NiFi can be used to integrate Azure Platform Services in existing NiFi solutions. We will setup a dataflow that ingests data from Azure IoT Hub and writes the data to Azure Data Lake Store.
-##Prerequisites
+## Prerequisites
 Before you begin you must have the following:
 * Azure IoT Hub with devices sending data to it. If you don’ t have a running solution follow the instructions at [Get started with preconfigured solutions] (http://docs.microsoft.com/en-us/azure/iot-suite/iot-suite-getstarted-preconfigured-solutions). For this blog post I used the *remote monitoring* preconfigured solution.
 * Azure Data Lake Store Account. Follow the instructions at [Get started with Azure Data Lake Store using the Azure Portal] (http://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-get-started-portal).
 * Apache NiFi installed with access to Azure Data Lake Store. You can install it for example on an Azure Linux VM. Some additional jars and configurations for the Azure Data Lake Store authentication are needed. For instructions on this, see [Connecting to Azure Data Lake from a NiFi dataflow] (http://community.hortonworks.com/articles/71916/connecting-to-azure-data-lake-from-a-nifi-dataflow.html) to configure Apache NiFi for Azure Data Lake Store access. Additional Note: You can copy the core-site.xml and hdfs-site.xml from one of your HDInsight Head Nodes to the machine where NiFi is running. You also should set the *dfs.adls.home.mountpoint* properly, directing to root or a data directory.
-##Create the NiFi dataflow
+## Create the NiFi dataflow
 You are now ready to create the dataflow. The final flow will look like this:
 
 
@@ -37,5 +37,5 @@ For production use you should consider partitioning and compressing the data (co
 The Flow Files will appear in the directory you have specified when you run the dataflow. A File Preview should look like this:
 
 
-##Conclusion
+## Conclusion
 In this post, we have seen how easy it is to implement a cold path ingesting data from Azure IoT Hub to Azure Data Lake Store. No coding is required. You can also use Apache NiFi for dataflows integrating with other Services like Azure Event Hub, Apache Kafka or Apache HBase. 

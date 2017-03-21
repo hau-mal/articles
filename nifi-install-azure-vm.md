@@ -1,4 +1,4 @@
-![nifi0](/images/nifi0.png)
+![nifi0] (/images/nifi0.png)
 
 # Installing Apache NiFi on an Azure VM
 
@@ -48,7 +48,7 @@ and copy needed jars from HDinsight. The following files are needed:
 | /usr/hdp/current/hadoop-hdfs-client/lib/ | okhttp-2.4.0.jar |
 | /usr/hdp/current/hadoop-hdfs-client/lib/ | okio-1.4.0.jar |
 
-Copy them e. g. like:
+Copy them e. g. using scp:
 
 ```
 
