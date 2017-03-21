@@ -7,7 +7,7 @@ With Apache NiFi you can automate the data flow between different systems. The f
 ## Prerequisites
 Before you begin you must have the following:
 * an Azure Ubuntu VM running
-* Installed Java (if not installed see for example [Java installation] (https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04) )
+* Installed Java, if not installed see for example [Java installation](https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04).
 
 
 ## Install NiFi
