@@ -24,6 +24,8 @@ At this point you have all information to configure the *GetAzureEventHub Proces
 * **Shared Access Policy Name**: Copy the name from the Shared access policies blade.
 * **Shared Access Primary Key**: Copy the corresponding Key from the Shared access policies blade.
 
+![nifi3](/images/nifi3.png)
+
 To ensure that you do not create a single file for every message you should configure a *MergeContent* processor between the *GetAzureEventHub Processor* and the *PutHDFS* processor.
 
 In the last step you configure the *PutHDFS* processor:
@@ -32,13 +34,13 @@ In the last step you configure the *PutHDFS* processor:
 * **Additional Classpath Resources**: *path to additional resources*, as described in [Connecting to Azure Data Lake from a NiFi dataflow](http://community.hortonworks.com/articles/71916/connecting-to-azure-data-lake-from-a-nifi-dataflow.html)
 * **Directory**: *target dir*
 
-![nifi3](/images/nifi3.png)
+![nifi4](/images/nifi4.png)
 
 For production use you should consider partitioning and compressing the data (configure the Directory and compression codec accordingly).
 
 The Flow Files will appear in the directory you have specified when you run the dataflow. A File Preview should look like this:
 
-![nifi4](/images/nifi4.png)
+![nifi5](/images/nifi5.png)
 
 ## Conclusion
 In this post, we have seen how easy it is to implement a cold path ingesting data from Azure IoT Hub to Azure Data Lake Store. No coding is required. You can also use Apache NiFi for dataflows integrating with other Services like Azure Event Hub, Apache Kafka or Apache HBase. 
