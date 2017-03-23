@@ -1,4 +1,6 @@
-#NiFi Installation on HDInsight Edge Node
+# Install NiFi on an Azure HDInsight Edge Node
+
+With the following steps you can install Apache NiFi on an Azure HDInsight Edge Node:
 
 1. Copy the [installation Script](https://raw.githubusercontent.com/hau-mal/BigData/master/sh/nifi-install.sh) on your Azure Data Lakes Store.
 2. Add the script as an installScriptAction to your Arm Template:
@@ -15,4 +17,4 @@
 ```
 
 3. Setup an [SSH-Tunnel](https://github.com/Microsoft/azure-docs/blob/master/articles/hdinsight/hdinsight-linux-ambari-ssh-tunnel.md) to access the NiFi site.
-4. You can access NiFi on your edge Node: http://*edgenode*.internal.cloudapp.net:8080/nifi/
+4. You can access Apache NiFi on your edge Node: http://*edgenode*.internal.cloudapp.net:8080/nifi/
