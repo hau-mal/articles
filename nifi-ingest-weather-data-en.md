@@ -3,9 +3,11 @@
 
 ## Prerequisites
 Before you begin you must have the following:
-1. Set up an account at [Open Weather Map](https://openweathermap.org/) to get credentials for the API access.
+1. Set up an account at [OpenWeatherMap](https://openweathermap.org/) to get credentials for the API access.
 2. Set up Apache NiFi. This can be done on a VM or on an Edge-Node. Follow the steps under [VM Installation](nifi-install-azure-vm.md) or [Edge-Node-Installation](nifi-install-HDIEdgeNode.md).
 3. Set up an Azure Data Lake Store
+
+
 4. Set up a Mongo compatible Document DB
 
 ![nifi-weather1](/images/nifi-weather1.PNG)
