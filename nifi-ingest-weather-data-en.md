@@ -27,9 +27,11 @@ Configure the *GetHTTP* processor:
 
 ![nifi-weather6](/images/nifi-weather6.PNG)
 
+Configure the *SplitJSON* processor:
 
 ![nifi-weather7](/images/nifi-weather7.PNG)
 
+Configure the *MergeContent* processor:
 
 ![nifi-weather8](/images/nifi-weather8.PNG)
 
@@ -46,7 +48,7 @@ You can query the data in the Document DB. In the Azure portal navigate to your 
 
 ```
 SELECT * FROM c
-WHERE c.name = "SEATTLE"
+WHERE c.name = "Seattle"
 ```
 ![nifi-weather4](/images/nifi-weather4.PNG)
 
