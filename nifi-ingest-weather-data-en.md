@@ -18,13 +18,28 @@ Copy the mongo db connection string (you need this later to configure the NiFi P
 You are now ready to create the dataflow. The final flow will look like this:
 ![nifi-weather5](/images/nifi-weather5.png)
 
+Configure the *GetHTTP* processor:
 ![nifi-weather6](/images/nifi-weather6.png)
 
 ![nifi-weather7](/images/nifi-weather7.png)
 
 ![nifi-weather8](/images/nifi-weather8.png)
 
+
+To partition the data via ingest date configure the directory as follows:
+
+```
+SELECT * FROM c
+WHERE c.name = "SEATTLE"
+```
+
 ## View the data
+You can query the data in the Document DB. In the Azure portal navigate to your DocumentDB and open the query explorer. Enter the following query:
+
+```
+/tenant_01/raw/external/weather/ingest_date=${now():format('yyyy-MM-dd')}
+```
+
 ![nifi-weather4](/images/nifi-weather4.png)
 
 ## Conclusion
