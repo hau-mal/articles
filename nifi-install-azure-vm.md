@@ -69,5 +69,5 @@ sudo wget https://github.com/hau-mal/BigData/blob/master/jars/adl/adl.tar.gz?raw
 sudo tar -xzf adl.tar.gz?raw=true
 sudo rm adl.tar.gz?raw=true
 ```
-
+Finally copy a core-site.xml and hdfs-site.xml from your Hadoop Cluster to /etc/hadoop/conf. Note: You don' t have to have a Hadoop client installation on your machine.
 
