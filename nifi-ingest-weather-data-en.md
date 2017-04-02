@@ -31,7 +31,7 @@ Configure the *SplitJSON* processor:
 
 ![nifi-weather7](/images/nifi-weather7.PNG)
 
-Configure the *MergeContent* processor:
+Configure the *PutMongo* processor:
 
 ![nifi-weather8](/images/nifi-weather8.PNG)
 
