@@ -25,7 +25,7 @@ You are now ready to create the dataflow. The final flow will look like this:
 
 ![nifi-weather5](/images/nifi-weather5.PNG)
 
-Configure the *GetHTTP* processor:
+Configure the *GetHTTP* processor. Enter the URL http://api.openweathermap.org/data/2.5/group?id=2925533,2861632&units=metric&lang=en&appid=*yourAppId* and change the schedule (eg. to 5 minutes). For more details on the parameters in the API call see [OpenWeatherMap documentation](https://openweathermap.org/current/). 
 
 ![nifi-weather6](/images/nifi-weather6.PNG)
 
