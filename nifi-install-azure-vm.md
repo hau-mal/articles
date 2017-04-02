@@ -43,8 +43,8 @@ and copy needed jars from HDinsight. The following files are needed:
 
 | Path | File |
 | -----|------|
-| /usr/lib//hdinsight-datalake/ | azure-data-lake-store-sdk-2.0.4-SNAPSHOT.jar |
-| /usr/lib//hdinsight-datalake/ | hadoop-azure-datalake-2.0.0-SNAPSHOT.jar |
+| /usr/lib/hdinsight-datalake/ | azure-data-lake-store-sdk-2.0.4-SNAPSHOT.jar |
+| /usr/lib/hdinsight-datalake/ | hadoop-azure-datalake-2.0.0-SNAPSHOT.jar |
 | /usr/hdp/current/hadoop-client/lib/ | jackson-core-2.2.3.jar |
 | /usr/hdp/current/hadoop-hdfs-client/lib/ | okhttp-2.4.0.jar |
 | /usr/hdp/current/hadoop-hdfs-client/lib/ | okio-1.4.0.jar |
@@ -63,6 +63,7 @@ On my github there is a prepared archive with the above versions (HDI 3.5):
 ```
 #! /bin/bash
 # get jars Archive:
+cd /
 sudo wget https://github.com/hau-mal/BigData/blob/master/jars/adl/adl.tar.gz?raw=true 
 # Archive with jars in /usr/lib/hdinsight-datalake
 sudo tar -xzf adl.tar.gz?raw=true
