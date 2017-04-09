@@ -15,7 +15,7 @@ Before you begin you must have the following:
 
 Add a new collection:
 
-![nifi-weather2](/images/nifi-weather2.PNG)
+![nifi-weather2](https://raw.githubusercontent.com/hau-mal/articles/master/images/nifi-weather2.PNG)
 
 Copy the mongo db connection string (you need this later to configure the NiFi PutMongo processor:
 
