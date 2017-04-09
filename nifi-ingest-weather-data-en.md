@@ -10,7 +10,8 @@ Before you begin you must have the following:
 
 4. Set up a Mongo compatible Document DB
 
-![nifi-weather1](/images/nifi-weather1.PNG)
+![nifi-weather1](https://raw.githubusercontent.com/hau-mal/articles/master/images/nifi-weather4.PNG)
+
 
 Add a new collection:
 
