@@ -34,7 +34,7 @@ Consider some best practices to prevent metadata loss:
 For Azure SQL DB you should consider minimum three users:
 * An Azure SQL DB admin
 * a metastore admin
-* the normal metastore user
+* the "normal" metastore user
 
 User||permissions|comment|
 --- | --- | --- | --- 
@@ -43,6 +43,7 @@ User||permissions|comment|
 |Metastore User 1 |CREATE USER projectuser1rw WITH PASSWORD = 'pwd';|ALTER ROLE db_datawriter ADD MEMBER projectuser1rw; ALTER ROLE db_datareader ADD MEMBER projectuser1rw; GRANT CREATE TABLE TO projectuser1rw;|Normal metastore user used for HDInsight cluster & Databricks|
 |Metastore User 2 |CREATE USER projectuser1ro WITH PASSWORD = 'pwd';|ALTER ROLE db_datareader ADD MEMBER projectuser1ro; GRANT CREATE TABLE TO projectuser1ro;|limited user, not able to update metastore tables|
 
+If you are creating dedicated metastore users per cluster, you are able to track metastore changes via [Azure SQL DB auditing](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-auditing) capabilities.
 
 ## Data loss prevention
 * Core layer file access should be restricted to ETL operations (e. g. orchestrated via Data Factory), so DROP TABLE statements should fail for Hive or Spark users (SP or User Identities have only read access to Core folders)	 
