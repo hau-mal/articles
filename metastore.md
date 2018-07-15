@@ -29,7 +29,7 @@ Set hive-metastore.schema.verification to true, also consider to set the hive wa
 Consider some best practices to prevent metadata loss:
 * Metastore object definitions (Hive or Spark SQL Tables, Views, …) are part of the CI/CD pipeline
 * SQL DB offers point in time restore capabilities
-* Only grant necessary permissions to the hive user -setup a reasonable user concept (see the following tables). For HDInsight the Azure SQL DB user needs a CREATE TABLE authorization.
+* Only grant necessary permissions to the hive user - setup a reasonable user concept (see the following table). For HDInsight the Azure SQL DB user needs a CREATE TABLE authorization.
 
 For Azure SQL DB you should consider minimum three users:
 * An Azure SQL DB admin
