@@ -49,10 +49,10 @@ User||permissions|comment|
 
 
 ## References
-[Hive Metastore in HDInsight tips & tricks](https://blogs.msdn.microsoft.com/azuredatalake/2017/03/24/hive-metastore-in-hdinsight-tips-tricks-best-practices/)
-[Hive access control] https://cwiki.apache.org/confluence/display/Hive/SQL+Standard+Based+Hive+Authorization
-[Databricks access control] https://docs.azuredatabricks.net/administration-guide/admin-settings/table-acls/index.html#table-access-control 
-[HDInsight presentations]https://www.slideshare.net/AshishThapliyal5
-[SQL Server Authentication]https://docs.microsoft.com/en-us/sql/relational-databases/security/authentication-access/database-level-roles?view=sql-server-2017
+* [Hive Metastore in HDInsight tips & tricks](https://blogs.msdn.microsoft.com/azuredatalake/2017/03/24/hive-metastore-in-hdinsight-tips-tricks-best-practices/)
+* [Hive access control](https://cwiki.apache.org/confluence/display/Hive/SQL+Standard+Based+Hive+Authorization)
+* [Databricks access control](https://docs.azuredatabricks.net/administration-guide/admin-settings/table-acls/index.html#table-access-control)
+* [HDInsight presentations](https://www.slideshare.net/AshishThapliyal5)
+* [SQL Server Authentication](https://docs.microsoft.com/en-us/sql/relational-databases/security/authentication-access/database-level-roles?view=sql-server-2017)
 
 
