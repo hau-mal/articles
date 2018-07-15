@@ -1,12 +1,14 @@
 # Using a Hive shared metastore on Azure
 
 ## Best Practices
+General best practices are
 * Use a custom Metastore in an Azure SQL DB whenever possible, this will help you separate Compute and Metadata
 * Start with S2 tier which will give you 50 DTU and 250 GB of storage, you can always scale the database up in case you see bottlenecks
 * Ensure that the Metastore created for one HDInsight cluster version is not shared across different HDInsight cluster versions. This is due to different Hive versions has different schemas. Example - Hive 1.2 and Hive 2.1 clusters trying to use same Metastore.
 * Back-up your custom Metastore periodically for OOPS recovery and DR needs
 * Keep Metastore and HDInsight cluster in same region
 * Monitor your Metastore for performance and availability with Azure SQL DB Monitoring tools [Azure Portal , Azure Log Analytics]
+* If you want to share your metadata between HDInsight Spark clusters and Databricks use full paths for tables, e. g. abfss://file_system@account_name.dfs.core.windows.net/<path>/<path>/<file_name> as there is currently no mount-option in HDInsight.
 
 ## HDInsight and databricks configurations
 
