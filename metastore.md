@@ -8,7 +8,7 @@ General best practices are
 * Back-up your custom Metastore periodically for OOPS recovery and DR needs
 * Keep Metastore and HDInsight cluster in same region
 * Monitor your Metastore for performance and availability with Azure SQL DB Monitoring tools [Azure Portal , Azure Log Analytics]
-* If you want to share your metadata between HDInsight Spark clusters and Databricks use full paths for tables, e. g. abfss://file_system@account_name.dfs.core.windows.net/<path>/<path>/<file_name> as there is currently no mount-option in HDInsight.
+* If you want to share your metadata between HDInsight Spark clusters and Databricks use full paths for tables referencing Azure Data Lake or Blob Storage locations, e. g. abfss://file_system@account_name.dfs.core.windows.net/<path>/<path>/<file_name> as there is currently no mount-option in HDInsight.
 
 ## HDInsight and databricks configurations
 
