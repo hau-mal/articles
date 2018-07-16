@@ -16,7 +16,7 @@ Set hive-metastore.schema.verification to true, this prevents Hive metastore cli
 
     "hive-site": {
                   	"javax.jdo.option.ConnectionDriverName": "com.microsoft.sqlserver.jdbc.SQLServerDriver",
-                            "javax.jdo.option.ConnectionURL": "jdbc:sqlserver://hmanemeta.database.windows.net;database=hive1;encrypt=true;trustServerCertificate=true;create=false;loginTimeout=300",
+                            "javax.jdo.option.ConnectionURL": "jdbc:sqlserver://<servername>.database.windows.net;database=<database-name>;encrypt=true;trustServerCertificate=true;create=false;loginTimeout=300",
                             "javax.jdo.option.ConnectionUserName": "[parameters('hiveUserName')]",
                             "javax.jdo.option.ConnectionPassword": "[parameters('hivePassword')]",
                             "hive.metastore.warehouse.dir": "adl://<your-adls>.azuredatalakestore.net/<your-hive-warehouse-dir>",
