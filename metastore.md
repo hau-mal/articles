@@ -48,7 +48,7 @@ User||permissions|comment|
 If you are creating dedicated metastore users per cluster, you are able to track metastore changes via [Azure SQL DB auditing](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-auditing) capabilities.
 
 ## Data loss prevention
-* Core layer file access should be restricted to ETL operations (e. g. orchestrated via Data Factory), so DROP TABLE statements should fail for Hive or Spark users (SP or User Identities have only read access to Core folders). A drop table statement will not work if the user has no delete privilege in the underlying file-system.
+* Core layer file write and delete access should be restricted to ETL operations (e. g. orchestrated via Data Factory), so DROP TABLE statements should fail for Hive or Spark users (SP or User Identities have only read access to Core folders). A drop table statement will not work if the user has no delete privilege in the underlying file-system.
 
 
 ## References
