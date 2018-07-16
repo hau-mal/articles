@@ -8,9 +8,9 @@ General best practices are
 * Back-up your custom Metastore periodically for OOPS recovery and DR needs
 * Keep Metastore and HDInsight cluster in same region
 * Monitor your Metastore for performance and availability with Azure SQL DB Monitoring tools [Azure Portal , Azure Log Analytics]
-* If you want to share your metadata between HDInsight Spark clusters and Databricks use full paths for tables referencing Azure Data Lake or Blob Storage locations, e. g. abfss://file_system@account_name.dfs.core.windows.net/<path>/<path>/<file_name> as there is currently no mount-option in HDInsight.
+* If you want to share your metadata between HDInsight Spark clusters and Databricks use full qualified paths for table locations  referencing Azure Data Lake or Blob Storage locations, e. g. abfss://file_system@account_name.dfs.core.windows.net/<path>/<path>/<file_name> as there is currently no mount-option in HDInsight.
 
-## HDInsight and databricks configurations
+## HDInsight and Azure Databricks configurations
 
 Set hive-metastore.schema.verification to true, this prevents Hive metastore client from implicitly modifying the metastore database schema when the metastore client version does not match the metastore database version.  Also consider to set the hive warehouse dir explicitly. Hive-site configuration for HDInsight: 
 
@@ -36,13 +36,13 @@ Consider some best practices to prevent metadata loss:
 For Azure SQL DB you should consider minimum three users:
 * An Azure SQL DB admin
 * a metastore admin
-* the "normal" metastore user
+* the metastore user, used for HDInsight or Azure Databricks clusters
 
 User||permissions|comment|
 --- | --- | --- | --- 
 |Database admin|||do not use the DB admin as hive metastore admin|
 |Hive Metastore admin|CREATE USER msadmin WITH PASSWORD = 'pwd';|GRANT ALTER ANY USER TO msadmin; ALTER ROLE db_owner ADD MEMBER msadmin;|Metastore admin, e. g. used for Metastore administration and explicit schema upgrades.|
-|Metastore User 1 |CREATE USER projectuser1rw WITH PASSWORD = 'pwd';|ALTER ROLE db_datawriter ADD MEMBER projectuser1rw; ALTER ROLE db_datareader ADD MEMBER projectuser1rw; GRANT CREATE TABLE TO projectuser1rw;|Normal metastore user used for HDInsight cluster & Databricks|
+|Metastore User 1 |CREATE USER projectuser1rw WITH PASSWORD = 'pwd';|ALTER ROLE db_datawriter ADD MEMBER projectuser1rw; ALTER ROLE db_datareader ADD MEMBER projectuser1rw; GRANT CREATE TABLE TO projectuser1rw;|Normal metastore user used for HDInsight cluster & Azure Databricks|
 |Metastore read only user |CREATE USER projectuser1ro WITH PASSWORD = 'pwd';|ALTER ROLE db_datareader ADD MEMBER projectuser1ro; GRANT CREATE TABLE TO projectuser1ro;|limited user, not able to update metastore tables|
 
 If you are creating dedicated metastore users per cluster, you are able to track metastore changes via [Azure SQL DB auditing](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-auditing) capabilities.
