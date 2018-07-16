@@ -41,7 +41,7 @@ For Azure SQL DB you should consider minimum three users:
 User||permissions|comment|
 --- | --- | --- | --- 
 |Database admin|||do not use the DB admin as hive metastore admin|
-|Hive Metastore admin|CREATE USER msadmin WITH PASSWORD = 'pwd';|GRANT ALTER ANY USER TO msadmin; ALTER ROLE db_owner ADD MEMBER msadmin;|Metastore admin, e. g. used for Metastore administration|
+|Hive Metastore admin|CREATE USER msadmin WITH PASSWORD = 'pwd';|GRANT ALTER ANY USER TO msadmin; ALTER ROLE db_owner ADD MEMBER msadmin;|Metastore admin, e. g. used for Metastore administration and explicit schema upgrades.|
 |Metastore User 1 |CREATE USER projectuser1rw WITH PASSWORD = 'pwd';|ALTER ROLE db_datawriter ADD MEMBER projectuser1rw; ALTER ROLE db_datareader ADD MEMBER projectuser1rw; GRANT CREATE TABLE TO projectuser1rw;|Normal metastore user used for HDInsight cluster & Databricks|
 |Metastore read only user |CREATE USER projectuser1ro WITH PASSWORD = 'pwd';|ALTER ROLE db_datareader ADD MEMBER projectuser1ro; GRANT CREATE TABLE TO projectuser1ro;|limited user, not able to update metastore tables|
 
