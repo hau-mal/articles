@@ -3,8 +3,8 @@
 ## Best Practices
 General best practices are
 * Use a custom Metastore in an Azure SQL DB whenever possible, this will help you separate Compute and Metadata
-* Start with S2 tier which will give you 50 DTU and 250 GB of storage, you can always scale the database up in case you see bottlenecks
-* Ensure that the Metastore created for one HDInsight cluster version is not shared across different HDInsight cluster versions. This is due to different Hive versions has different schemas. Example - Hive 1.2 and Hive 2.1 clusters trying to use same Metastore.
+* Start with Azure SQL DB S2 tier which will give you 50 DTU and 250 GB of storage, you can always scale the database up in case you see bottlenecks
+* Ensure that the Metastore created for one HDInsight cluster version is not shared across different HDInsight cluster versions. This is due to different Hive versions has different schemas. Example - Hive 1.2 and Hive 2.1 clusters trying to use same Metastore. Also prevent implicit upgrades.
 * Back-up your custom Metastore periodically for OOPS recovery and DR needs
 * Keep Metastore and HDInsight cluster in same region
 * Monitor your Metastore for performance and availability with Azure SQL DB Monitoring tools [Azure Portal , Azure Log Analytics]
@@ -12,7 +12,7 @@ General best practices are
 
 ## HDInsight and databricks configurations
 
-Set hive-metastore.schema.verification to true, also consider to set the hive warehouse dir explicitly. Hive-site configuration for HDInsight: 
+Set hive-metastore.schema.verification to true, this prevents Hive metastore client from implicitly modifying the metastore database schema when the metastore client version does not match the metastore database version.  Also consider to set the hive warehouse dir explicitly. Hive-site configuration for HDInsight: 
 
     "hive-site": {
                   	"javax.jdo.option.ConnectionDriverName": "com.microsoft.sqlserver.jdbc.SQLServerDriver",
