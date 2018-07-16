@@ -30,7 +30,7 @@ Set hive-metastore.schema.verification to true, this prevents Hive metastore cli
 ## How to prevent metadata loss?
 Consider some best practices to prevent metadata loss:
 * Metastore object definitions (Hive or Spark SQL Tables, Views, …) are part of the CI/CD pipeline
-* SQL DB offers point in time restore capabilities
+* Use an Azure SQL DB as it offers point in time restore capabilities
 * Only grant necessary permissions to the hive user - setup a reasonable user concept (see the following table). For HDInsight the Azure SQL DB user needs a CREATE TABLE authorization, as this is checked from the HiveConfigurationValidator process before cluster creation.
 
 For Azure SQL DB you should consider minimum three users:
