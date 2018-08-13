@@ -26,7 +26,7 @@ e.g.  /sap/sapxyz999/stage     /sap/sapxyz999/database
       LOCATION "adl://<your-datalakestore>.azuredatalakestore.net/<dabase-dir>"
 
 ## Create user token
-Currently only named AAD user are supported
+Currently only named AAD users are supported
 
 ## Next steps
 Advanced Configurations
