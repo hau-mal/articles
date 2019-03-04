@@ -1,5 +1,5 @@
 
-# Configuring access to ADLS Gen1 in Azure Datavbricks
+# Configuring access to ADLS Gen1 in Azure Databricks
 
 If you want to use Azure AD Credential Passthrough to Azure Data Lake Storage Gen1 you loose the convenience of mountpoints. 
 With some Spark configs you can optimize usability, even improve interoperability Hive based data. 
